@@ -1,14 +1,15 @@
 "use client";
 import { useState } from "react";
+import type { FormEvent } from "react";
 
 export default function ShortenForm() {
-    const [url, setUrl] useState("");
+    const [url, setUrl] = useState("");
     const [alias, setAlias] = useState("");
     const [shortUrl, setShortUrl] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
-    async function handleSubmit(event: react.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setError("");
         setLoading(true);
